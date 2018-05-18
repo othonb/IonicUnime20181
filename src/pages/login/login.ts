@@ -9,17 +9,31 @@ import { VariaveisGlobaisProvider } from '../../providers/variaveis-globais/vari
 })
 export class LoginPage {
 
-  private usuario : String;
+  //private usuario : String;
   private senha : String;
-  private estaLogado : Boolean;
+  //private estaLogado : Boolean;
 
   public constructor(
     private variaveisGlobais : VariaveisGlobaisProvider
   ) {
 
-    this.usuario = null;
+    //this.usuario = null;
+    //this.senha = null;
+    //this.estaLogado = false;
+
+    this.iniciaVariaveis ();
+
+  }
+
+  private iniciaVariaveis () {
+
+    this.variaveisGlobais.setEstaLogado (false);
+
+    this.variaveisGlobais.setUsuario (null);
+
     this.senha = null;
-    this.estaLogado = false;
+
+
 
   }
 
@@ -31,19 +45,23 @@ export class LoginPage {
 
     this.senha = null;
 
-    this.estaLogado = true;
+    //this.estaLogado = true;
 
-    this.variaveisGlobais.setUsuario (this.usuario);
-    this.variaveisGlobais.setEstaLogado (this.estaLogado);
+    //this.variaveisGlobais.setUsuario (this.usuario);
+    //this.variaveisGlobais.setEstaLogado (this.estaLogado);
+
+    this.variaveisGlobais.setEstaLogado (true);
 
   }
 
   private saiDoSistema () {
 
-    this.usuario = null;
-    this.senha = null;
+    //this.usuario = null;
+    //this.senha = null;
 
-    this.estaLogado = false;
+    //this.estaLogado = false;
+
+    this.iniciaVariaveis ();
 
   }
 

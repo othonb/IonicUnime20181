@@ -9,12 +9,12 @@
 
 <ion-content padding>
 
-  <ion-list no-lines *ngIf="! estaLogado">
+  <ion-list no-lines *ngIf="! variaveisGlobais.isEstaLogado()">
 
     <ion-item>
 
       <ion-label stacked>Usuário</ion-label>
-      <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+      <ion-input type="text" [ngModel]="variaveisGlobais.getUsuario()" (ngModelChange)="variaveisGlobais.setUsuario($event)"></ion-input>
 
     </ion-item>
 
@@ -27,10 +27,10 @@
 
   </ion-list>
 
-  <p *ngIf="estaLogado">Usuário no sistema: {{usuario}} </p>
+  <p *ngIf="variaveisGlobais.isEstaLogado()">Usuário no sistema: {{ variaveisGlobais.getUsuario() }} </p>
 
-  <button *ngIf="! estaLogado" ion-button block color="secondary" (click)="entraNoSistema()">Entrar</button>
-  <button *ngIf="estaLogado" ion-button block color="danger" (click)="saiDoSistema()">Sair</button>
+  <button *ngIf="! variaveisGlobais.isEstaLogado()" ion-button block color="secondary" (click)="entraNoSistema()">Entrar</button>
+  <button *ngIf="variaveisGlobais.isEstaLogado()" ion-button block color="danger" (click)="saiDoSistema()">Sair</button>
 
 </ion-content>
 
