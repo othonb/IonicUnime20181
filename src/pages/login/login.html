@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Entre no Sistema</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list no-lines *ngIf="! estaLogado">
+
+    <ion-item>
+
+      <ion-label stacked>Usuário</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+
+    </ion-item>
+
+    <ion-item>
+
+      <ion-label stacked>Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="senha"></ion-input>
+  
+    </ion-item>
+
+  </ion-list>
+
+  <p *ngIf="estaLogado">Usuário no sistema: {{usuario}} </p>
+
+  <button *ngIf="! estaLogado" ion-button block color="secondary" (click)="entraNoSistema()">Entrar</button>
+  <button *ngIf="estaLogado" ion-button block color="danger" (click)="saiDoSistema()">Sair</button>
+
+</ion-content>
+
+<ion-content>
+
+  Teste de escrita
+
+</ion-content>

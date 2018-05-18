@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { VariaveisGlobaisProvider } from '../../providers/variaveis-globais/variaveis-globais';
 
 @Component({
   selector: 'page-about',
@@ -7,8 +7,8 @@ import { NavController } from 'ionic-angular';
 })
 export class AboutPage {
 
-  constructor(public navCtrl: NavController) {
-
-  }
+  constructor(
+    private variaveisGlobais : VariaveisGlobaisProvider
+  ) {  }
 
 }

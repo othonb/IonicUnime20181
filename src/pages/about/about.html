@@ -1,11 +1,23 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      About
+    <ion-title *ngIf="variaveisGlobais.isEstaLogado()">
+      Usuario: {{ variaveisGlobais.getUsuario() }}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+  <div *ngIf="variaveisGlobais.isEstaLogado()">
+
+    <p>Usuário: {{ variaveisGlobais.getUsuario() }} </p>
+
+  </div>
+
+  <div *ngIf="! variaveisGlobais.isEstaLogado()">
+
+    <p>Precisa Entrar com usuário antes de qualquer coisa!!!</p>
+
+  </div>
 
 </ion-content>
